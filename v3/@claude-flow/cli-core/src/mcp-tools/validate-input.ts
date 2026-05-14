@@ -9,7 +9,7 @@
 
 // Patterns for input sanitization (inline — no external dependency required)
 const SHELL_META = /[;&|`$(){}[\]<>!#\\]/;
-const PATH_TRAVERSAL = /\.\.[/\\]/;
+const PATH_TRAVERSAL = /(^|[\\/])\.\.(?=($|[\\/]))/;
 const IDENTIFIER_RE = /^[a-zA-Z0-9_][a-zA-Z0-9_\-.:]{0,127}$/;
 const GIT_REF_RE = /^[a-zA-Z0-9_][a-zA-Z0-9_\-.:~^/]{0,255}$/;
 const NPM_PACKAGE_RE = /^(@[a-zA-Z0-9_\-]+\/)?[a-zA-Z0-9_\-][a-zA-Z0-9_\-.]{0,213}$/;
