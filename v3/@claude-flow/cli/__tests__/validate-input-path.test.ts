@@ -16,8 +16,10 @@ describe('validatePath traversal checks', () => {
     const cases = [
       '..',
       '../secret',
+      '../../secret',
       '..\\secret',
       'foo/..',
+      'foo/bar/..',
       'foo/../bar',
       'foo\\..\\bar',
     ];
