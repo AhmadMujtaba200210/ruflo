@@ -10,6 +10,7 @@ describe('validatePath traversal checks', () => {
     expect(validatePath('foo/bar', 'path').valid).toBe(true);
     expect(validatePath('C:\\temp\\file', 'path').valid).toBe(true);
     expect(validatePath('foo..bar', 'path').valid).toBe(true);
+    expect(validatePath('foo/..bar', 'path').valid).toBe(true);
   });
 
   it('rejects .. path segments', () => {
